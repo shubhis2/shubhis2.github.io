@@ -1,28 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 .profile-pic {
   position: relative;
-  max-width: 130px;
-  max-height: 130px;
-  width: auto;
-  height: auto;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   overflow: hidden;
-  margin: -31px;
-  margin-left: -7px;
-  border: 6px solid rgba(135, 42, 71, 0.4);
+  margin: 0 auto;
+  border: 4px solid rgba(30, 58, 95, 0.3);
   border-radius: 50% !important;
 }
-
-.profile-pic img {
-  width: 100%;
-  height: auto;
-}
-
-.tracker {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 .social {
   margin: 0 auto;
@@ -52,10 +39,6 @@
   color: #0077b5;
 }
 
-.angellist {
-  color: grey;
-}
-
 .icon-btn:hover {
   transform: scale(1.10);
   color: #FFFFFF;
@@ -65,48 +48,51 @@
   background-color: #0077b5;
 }
 
-.angellist:hover {
-  background-color: grey;
-}
-
 .github:hover {
   background-color: black;
 }
 
-/* Buttons - Read Me, Contact Us */
-
 .readme {
   position: relative;
-  padding: 11px 35px;
+  padding: 12px 36px;
   background: #fff;
-  color: #991a44;
+  color: #1E3A5F;
   border: 2px solid #fff;
   font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   display: inline-block;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.readme:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #1E3A5F;
 }
 
 .contactme {
   position: relative;
-  padding: 11px 35px;
-  background: none;
+  padding: 12px 36px;
+  background: transparent;
   color: #fff;
   border: 2px solid #fff;
   font-weight: 600;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   display: inline-block;
   margin-top: 1.5em;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .contactme:hover {
-  color: #70174e;
-  background-color: white;
+  color: #1E3A5F;
+  background-color: #fff;
+  transform: translateY(-2px);
 }
 
 html {
@@ -114,17 +100,22 @@ html {
 }
 
 body {
-  color: #333;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #2d2d3a;
   font-size: 18px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+}
+
 a {
-  color: #70154b;
+  color: #152D4A;
 }
 
 blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
+  border-left: 5px solid #1E3A5F;
+  color: #555;
   font-size: 125%;
   font-weight: 400;
   margin: 20px 0;
@@ -182,7 +173,7 @@ ul.side-nav li {
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: rgb(16, 202, 56);
+  color: #1E3A5F;
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -210,12 +201,12 @@ ul.side-nav.fixed li.logo a {
 ul.table-of-contents li:not(.logo) a.active,
 ul.table-of-contents li:not(.logo) a:hover {
   background-color: #fafafa;
-  border-left: 3px solid;
+  border-left: 3px solid #4A90D9;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
 ul#slide-out li:not(.logo) a span {
-  color: #333 !important;
+  color: #2d2d3a !important;
 }
 
 li.logo span {
@@ -235,16 +226,18 @@ li.logo span {
 }
 
 h3 {
-  font-weight: 200;
-  margin-bottom: 60px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
   margin-top: 0;
-  padding: 30px 40px;
+  padding: 20px 40px;
   text-transform: uppercase;
 }
 
 .section {
-  padding-bottom: 30px;
-  padding-top: 0;
+  padding-bottom: 60px;
+  padding-top: 20px;
   position: relative;
 }
 
@@ -253,8 +246,13 @@ h3 {
 }
 
 #intro.section {
-  background: #f0abd0 repeat;
+  background: linear-gradient(135deg, #152D4A 0%, #1E3A5F 40%, #4A90D9 100%);
   position: relative;
+}
+
+#intro .content {
+  margin-left: 10%;
+  margin-top: 50px;
 }
 
 #intro.section .container {
@@ -271,16 +269,14 @@ h3 {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-#intro.section .underline {
-  border-bottom: 5px solid #24305e;
-}
-
 #intro.section .teal {
+  background-color: rgba(255, 255, 255, 0.15) !important;
   padding: 0 10px;
+  border-radius: 4px;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
   height: 100%;
   left: 0;
   position: absolute;
@@ -289,13 +285,20 @@ h3 {
 }
 
 .waves-effect.waves-blue .waves-ripple {
-  /* The alpha value allows the text and background color
-   of the button to still show through. */
   background-color: rgba(33, 150, 243, 0.2);
 }
 
 .card {
   margin-bottom: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .card .role {
@@ -305,14 +308,18 @@ h3 {
   top: 35px;
 }
 
+.role-title {
+  color: #1E3A5F;
+}
+
 .card li a {
   margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #ffab40;
+  color: #2d2d3a;
+  border-bottom: 2px solid #4A90D9;
 }
 
 .card li a:hover {
-  color: #333;
+  color: #2d2d3a;
   font-weight: 500;
 }
 
@@ -391,59 +398,114 @@ a.hoverline {
 }
 
 a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
-}
-
-#skills .card.large {
-  height: 360px;
+  border-bottom: 3px solid #4A90D9 !important;
 }
 
 #skills h4 {
   border-bottom: 1px solid #ddd;
   margin-bottom: 30px;
   padding-bottom: 20px;
+  color: #152D4A;
 }
 
 #skills .col img.responsive-img {
-  margin: 0 auto;
-  max-height: 100px;
-  padding-bottom: 10px;
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
+  display: block;
+  margin: 0 auto 8px;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.card.large .card-content p {
-  color: inherit;
-  margin: 0;
-  padding: 30px 0;
+#skills .col.s4 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
 }
 
-#experience .card-content .row {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+#projects .row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card.large .card-image {
-  height: 230px;
+#projects .row > .col {
+  display: flex;
 }
 
-.card.large .card-content {
+#projects .row > .col > .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#projects .card.medium {
   height: auto;
+  min-height: 300px;
 }
 
-.card.medium .card-image {
-  height: 240px;
+#projects .card.medium .card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+#projects .card.medium .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#projects .card.medium .card-content {
+  flex: 1;
+  min-height: 100px;
+}
+
+#projects .card.medium .card-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
 }
 
 .card-action a.btn-floating {
   margin-bottom: 0;
 }
 
-#contact a:not(.btn-floating) {
-  bottom: 6px;
-  left: 20px;
-  position: relative;
+/* Contact section */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  background-color: #1E3A5F !important;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #152D4A;
+}
+
+#experience .card-content .row {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
 #experience .col.s12.m2 {
@@ -465,11 +527,11 @@ small {
 }
 
 .teal-text {
-  color: #6c244d !important;
+  color: #152D4A !important;
 }
 
 .teal {
-  background-color: #9d5d84 !important;
+  background-color: #1E3A5F !important;
 }
 
 @media (min-width: 1200px) {
@@ -512,7 +574,7 @@ small {
 
   nav a.button-collapse,
   nav a.button-collapse i {
-    color: #883a58;
+    color: #1E3A5F;
     height: 56px;
     line-height: 56px;
   }
@@ -573,6 +635,10 @@ small {
     right: initial;
     top: initial;
   }
+
+  #projects .row {
+    display: block;
+  }
 }
 
 @media (max-width: 600px) {
@@ -605,17 +671,14 @@ small {
     bottom: 15px;
   }
 
-  #contact a:not(.btn-floating) {
+  .contact-item {
+    flex-direction: column;
     text-align: center;
-    display: block;
-    left: initial;
-    bottom: initial;
   }
 
-  #contact a.btn-floating.btn-large {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
+  .contact-link {
+    margin-left: 0;
+    margin-top: 12px;
   }
 
   #intro.section {
